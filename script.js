@@ -1,4 +1,4 @@
-let audioElement = new Audio("songs/1.mp3");
+let audioElement = new Audio("1.mp3");
 let masterPlay = document.querySelector("#masterPlay");
 let myProgressBar = document.querySelector("#myProgressBar");
 let gif = document.querySelector("#gif");
@@ -10,57 +10,57 @@ let songIndex = 0;
 let songs = [
   {
     songName: "dildaara",
-    filePath: "songs/1.mp3",
-    coverPath: "cover/1.jpg",
+    filePath: "1.mp3",
+    coverPath: "1.jpg",
     flag: 0,
   },
   {
     songName: "chammak chalo",
-    filePath: "songs/2.mp3",
-    coverPath: "cover/2.jpg",
+    filePath: "2.mp3",
+    coverPath: "2.jpg",
     flag: 0,
   },
   {
     songName: "ghana kasoota",
-    filePath: "songs/3.mp3",
-    coverPath: "cover/3.jpg",
+    filePath: "3.mp3",
+    coverPath: "3.jpg",
     flag: 0,
   },
   {
     songName: "tum hi ho",
-    filePath: "songs/4.mp3",
-    coverPath: "cover/4.jpg",
+    filePath: "4.mp3",
+    coverPath: "4.jpg",
     flag: 0,
   },
   {
     songName: "tera ghata",
-    filePath: "songs/5.mp3",
-    coverPath: "cover/5.jpg",
+    filePath: "5.mp3",
+    coverPath: "5.jpg",
     flag: 0,
   },
   {
     songName: "kabhi jo badal barse",
-    filePath: "songs/6.mp3",
-    coverPath: "cover/6.jpg",
+    filePath: "6.mp3",
+    coverPath: "6.jpg",
     flag: 0,
   },
   {
     songName: "tu aake dekhle",
-    filePath: "songs/7.mp3",
-    coverPath: "cover/7.jpg",
+    filePath: "7.mp3",
+    coverPath: "7.jpg",
     flag: 0,
   },
-  { songName: "chididya", filePath: "songs/8.mp3", coverPath: "cover/8.jpg" },
+  { songName: "chididya", filePath: "8.mp3", coverPath: "8.jpg" },
   {
     songName: "jeena jeena",
-    filePath: "songs/9.mp3",
-    coverPath: "cover/9.jpg",
+    filePath: "9.mp3",
+    coverPath: "9.jpg",
     flag: 0,
   },
   {
     songName: "tum hi ho bandhu",
-    filePath: "songs/10.mp3",
-    coverPath: "cover/10.jpg",
+    filePath: "10.mp3",
+    coverPath: "10.jpg",
     flag: 0,
   },
 ];
@@ -68,7 +68,7 @@ let mySongs = document.querySelectorAll(".mySongs");
 let allcoverImages = document.querySelectorAll(".coverImage");
 allcoverImages = Array.from(allcoverImages);
 allcoverImages.forEach((element, i) => {
-  element.src = `cover/${i + 1}.jpg`;
+  element.src = `${i + 1}.jpg`;
 });
 const songPlay = document.querySelectorAll(".songPlay");
 // making all buttons play
@@ -83,7 +83,7 @@ Array.from(songPlay).forEach((element, i) => {
     makeAllPlays();
     if (audioElement.paused) {
       element.src = "pause-button.png";
-      audioElement.src = `songs/${i + 1}.mp3`;
+      audioElement.src = `${i + 1}.mp3`;
       masterSongName.innerHTML=songs[i].songName;
       masterPlay.src = "pause.png";
       audioElement.currentTime = 0;
@@ -101,12 +101,12 @@ Array.from(songPlay).forEach((element, i) => {
 masterPlay.addEventListener("click", () => {
   if (audioElement.paused || audioElement.currentTime == 0) {
     audioElement.play();
-    masterPlay.src = "http://127.0.0.1:5501/projects/spotify%20clone/pause.png";
+    masterPlay.src = "pause.png";
     gif.style.opacity = 1;
     songPlay[songIndex].src="pause-button.png";
   } else {
     audioElement.pause();
-    masterPlay.src = "http://127.0.0.1:5501/projects/spotify%20clone/play.png";
+    masterPlay.src = "play.png";
     gif.style.opacity = 0;
     songPlay[songIndex].src="play-button.png";
   }
@@ -138,7 +138,7 @@ audioElement.addEventListener("timeupdate", () => {
   duration.innerHTML = convertHMS(audioElement.duration);
   if (audioElement.currentTime == audioElement.duration) {
     audioElement.pause();
-    masterPlay.src = "http://127.0.0.1:5501/projects/spotify%20clone/play.png";
+    masterPlay.src = "play.png";
     gif.style.opacity = 0;
   }
 });
@@ -155,7 +155,7 @@ next.addEventListener('click', ()=>{
   else{
       songIndex += 1;
   }
-  audioElement.src = `songs/${songIndex+1}.mp3`;
+  audioElement.src = `${songIndex+1}.mp3`;
   masterSongName.innerText = songs[songIndex].songName;
   audioElement.currentTime = 0;
   audioElement.play();
@@ -170,7 +170,7 @@ previous.addEventListener('click',()=>{
   else{
     songIndex-=1;
   }
-  audioElement.src = `songs/${songIndex-1}.mp3`;
+  audioElement.src = `${songIndex-1}.mp3`;
   masterSongName.innerText = songs[songIndex].songName;
   audioElement.currentTime = 0;
   audioElement.play();
