@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Roboto&family=Roboto+Condensed&family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+ul{
+    list-style-type: none;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+#brand {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#brand img {
+  width: 30px;
+}
+nav {
+  height: 2rem;
+  background-color: black;
+  color: var(--text-bright-accent, #1fe166);
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+nav ul li {
+  padding: 0 15px;
+  cursor: pointer;
+}
+li span {
+  font-weight: bolder;
+  padding: 0px 15px 0px 5px;
+}
+#login {
+  position: absolute;
+  right: 0;
+}
+main{
+    min-height: 70vh;
+    background-color: black;
+    color:white;
+    background: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:fixed;
+    bottom:7rem;
+    top:3rem;
+    width:100%;
+    overflow: scroll;
+}
+main div{
+    width:50vw;
+    height:35vw;
+}
+.songs{
+    width:20rem;
+    height:2rem;
+    border:2px solid red;
+    margin-bottom:1rem;
+    border-radius:1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.2rem;
+}
+.songs:nth-of-type(1){
+    margin-top:0.5rem;
+}
+
+.songs:nth-of-type(n){
+    border:2px solid #a2d2ff;
+}
+.songs:nth-of-type(2n){
+    border:2px solid #cdb4db;
+}
+footer {
+  height: 5rem;
+  margin-top: 1rem;
+  background-color: var(--text-bright-accent, #0cbf4e);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+footer input {
+  width: 70vw;
+  margin-bottom: 5px;
+}
+.buttons img {
+  width: 30px;
+}
+img{
+    width:2rem;
+}
+.songInfo{
+  position:absolute;
+  left:12rem;
+  color:#000;
+  display: flex;
+  flex-direction: column;
+}
+.songInfo img{
+  margin-top: 0.5rem;
+  width:3rem;
+  opacity:0;
+  transition: opacity 0.4s ease-in;
+}
+@media only screen and (max-width: 450px) {
+  #login,#masterSongName{
+    display: none;
+  }
+}
