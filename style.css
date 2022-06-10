@@ -117,4 +117,10 @@ img{
   #login,#masterSongName{
     display: none;
   }
+   #startingTime::after{
+    content:"/";
+  }
+  #gif{
+    display: none;
+  }
 }
